@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C6U-ph-a7n">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Radio_Button" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwC-Nz-DU3">
+                                <rect key="frame" x="77.5" y="321" width="220" height="25"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-rA-oSg">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="25"/>
+                                        <state key="normal" title="Male" image="box">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="checkBox"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHs-Un-YfR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZB-w8-mWW">
+                                        <rect key="frame" x="64" y="0.0" width="84" height="25"/>
+                                        <state key="normal" title="Female" image="box">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="checkBox"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lRe-Zv-KRm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-YS-pZz">
+                                        <rect key="frame" x="148" y="0.0" width="72" height="25"/>
+                                        <state key="normal" title="Other" image="box">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" image="checkBox"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2g-gW-LRe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5CS-Pm-kn3">
+                                <rect key="frame" x="0.0" y="106" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VwC-Nz-DU3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8cX-fN-yBF"/>
+                            <constraint firstItem="VwC-Nz-DU3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hwu-Fh-8uB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VFy-PK-pVf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Be8-48-zd4">
+                            <connections>
+                                <segue destination="pfA-Xb-Chr" kind="show" id="bSf-y2-Rnj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="done" destination="Be8-48-zd4" id="tyh-S4-Ipi"/>
+                        <outlet property="female" destination="8ZB-w8-mWW" id="96L-HP-swF"/>
+                        <outlet property="male" destination="qlG-rA-oSg" id="E6f-Qz-JmW"/>
+                        <outlet property="other" destination="xBO-YS-pZz" id="r8k-CG-EbK"/>
+                        <outletCollection property="buttons" destination="qlG-rA-oSg" collectionClass="NSMutableArray" id="qc1-5M-ecO"/>
+                        <outletCollection property="buttons" destination="8ZB-w8-mWW" collectionClass="NSMutableArray" id="qYu-SX-GLi"/>
+                        <outletCollection property="buttons" destination="xBO-YS-pZz" collectionClass="NSMutableArray" id="tAy-0t-DKL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-408.80000000000001" y="135.38230884557723"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="nwy-EW-rWo">
+            <objects>
+                <viewController id="pfA-Xb-Chr" customClass="DetailViewController" customModule="Radio_Button" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yT3-aQ-K85">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0b9-4a-fgv">
+                                <rect key="frame" x="28" y="311" width="319" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="BXF-a6-oRY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelResult" destination="0b9-4a-fgv" id="Htf-kw-3QF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmS-wG-b2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271.19999999999999" y="134.48275862068968"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bjE-Hi-wtz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C6U-ph-a7n" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M2l-Qq-mdz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Qul-hL-asY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPJ-L2-1ld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1090" y="135"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="box" width="25" height="25"/>
+        <image name="checkBox" width="25" height="25"/>
+    </resources>
+</document>
